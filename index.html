@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTON — Прайс-лист 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #FAFAFA;
+            --color-card: #FFFFFF;
+            --color-text: #1A1A1A;
+            --color-text-secondary: #666666;
+            --color-border: #E8E8E8;
+            --color-accent-base: #4A90A4;
+            --color-accent-soft: #C97B7B;
+            --color-price-pro: #2E7D32;
+            --color-price-retail: #1565C0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .logo {
+            font-size: 56px;
+            font-weight: 300;
+            letter-spacing: 12px;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            font-weight: 400;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid;
+        }
+
+        .section-header.base {
+            border-color: var(--color-accent-base);
+        }
+
+        .section-header.soft {
+            border-color: var(--color-accent-soft);
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .section-title.base {
+            color: var(--color-accent-base);
+        }
+
+        .section-title.soft {
+            color: var(--color-accent-soft);
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            font-weight: 400;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--color-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 aspect ratio (3/4 = 0.75) */
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            overflow: hidden;
+        }
+
+        .product-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            background: #fafafa;
+        }
+
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            gap: 12px;
+        }
+
+        .image-placeholder svg {
+            width: 48px;
+            height: 48px;
+            opacity: 0.4;
+        }
+
+        .image-placeholder-text {
+            font-size: 13px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .product-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-header {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .product-name-ru {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            font-weight: 400;
+        }
+
+  .price-table-header {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    text-align: center;
+}
+
+.price-table-header span:first-child {
+    text-align: left;
+}
+
+   .price-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #F5F5F5;
+    text-align: center;
+}
+
+.price-row .volume {
+    text-align: left;
+}
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+.price-row .price {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+        .volume {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        .price {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .price-pro {
+            color: var(--color-price-pro);
+        }
+
+        .price-retail {
+            color: var(--color-price-retail);
+        }
+
+        .price-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .special-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #F5F5F5;
+        }
+
+        .special-row:last-child {
+            border-bottom: none;
+        }
+
+        .special-info {
+            flex: 1;
+        }
+
+        .special-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .special-volume {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin-top: 2px;
+        }
+
+        .special-prices {
+            display: flex;
+            gap: 24px;
+        }
+
+        .special-price-block {
+            text-align: right;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-size: 13px;
+        }
+
+        .footer-note {
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact:hover {
+            color: var(--color-accent-base);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 24px 16px;
+            }
+
+            .logo {
+                font-size: 40px;
+                letter-spacing: 8px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 16px;
+            }
+
+            .product-content {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            /* Убраны стили для aspect-ratio - теперь 4:3 везде */
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-row {
+                grid-template-columns: 50px 1fr 1fr;
+                gap: 8px;
+            }
+
+            .special-prices {
+                gap: 16px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="logo">UTON</h1>
+        <p class="tagline">Professional cosmetics</p>
+    </header>
+
+    <!-- BASE Series -->
+    <section class="section">
+        <div class="section-header base">
+            <h2 class="section-title base">BASE</h2>
+            <span class="section-subtitle">Уход для всех типов кожи</span>
+        </div>
+
+        <div class="products-grid">
+            <!-- Beautybox Express Care -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/beautybox-express-care.jpg" alt="Beautybox Express Care" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>beautybox-express-care.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Beautybox Express Care</div>
+                        <div class="product-name-ru">Бьютибокс Экспресс Уход</div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">Base Mini Box</div>
+                            <div class="special-volume">3 Процедуры</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">1 400 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">3 100 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">Base Box 7</div>
+                            <div class="special-volume">7 Процедур</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">4 200 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">8 740 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">Base Box 14</div>
+                            <div class="special-volume">14 Процедур</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">5 350 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">11 990 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purifying Gentle Gel -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/purifying-gentle-gel.jpg" alt="Purifying Gentle Gel" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>purifying-gentle-gel.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Purifying Gentle Gel <span style="font-size: 13px; color: #666;">(pH 3.5)</span></div>
+                        <div class="product-name-ru">Очищающий гель с кислотами мягкого действия</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">140 ₽</span>
+                        <span class="price price-retail">280 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">410 ₽</span>
+                        <span class="price price-retail">820 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">50 мл</span>
+                        <span class="price price-pro">530 ₽</span>
+                        <span class="price price-retail">1 040 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">910 ₽</span>
+                        <span class="price price-retail">1 820 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Whitening Toner -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/whitening-toner.jpg" alt="Whitening Toner" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>whitening-toner.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Whitening Toner <span style="font-size: 13px; color: #666;">(pH 3.5)</span></div>
+                        <div class="product-name-ru">Осветляющий тоник с кислотами</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">140 ₽</span>
+                        <span class="price price-retail">280 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">490 ₽</span>
+                        <span class="price price-retail">980 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">50 мл</span>
+                        <span class="price price-pro">680 ₽</span>
+                        <span class="price price-retail">1 340 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">1 230 ₽</span>
+                        <span class="price price-retail">2 480 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delicate Peel GL-20% -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/delicate-peel-gl20.jpg" alt="Delicate Peel GL-20%" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>delicate-peel-gl20.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Delicate Peel GL-20% <span style="font-size: 13px; color: #666;">(pH 3.5)</span></div>
+                        <div class="product-name-ru">Деликатный гель-пилинг</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">270 ₽</span>
+                        <span class="price price-retail">550 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">1 240 ₽</span>
+                        <span class="price price-retail">2 480 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Peptides Mask -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/active-peptides-mask.jpg" alt="Active Peptides Mask" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>active-peptides-mask.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Active Peptides Mask</div>
+                        <div class="product-name-ru">Маска для лица с пептидами и фульвовой кислотой</div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">1 Саше</div>
+                            <div class="special-volume">25 мл</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">220 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">600 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">7 Саше</div>
+                            <div class="special-volume">175 мл</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">1 150 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">3 400 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post-treatment Cream SPF-20 -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/post-treatment-cream-spf20.jpg" alt="Post-treatment Cream SPF-20" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>post-treatment-cream-spf20.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Post-treatment Cream SPF-20</div>
+                        <div class="product-name-ru">Крем-гель постпроцедурный успокаивающий</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">200 ₽</span>
+                        <span class="price price-retail">400 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">1 100 ₽</span>
+                        <span class="price price-retail">2 200 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">50 мл</span>
+                        <span class="price price-pro">1 530 ₽</span>
+                        <span class="price price-retail">3 100 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">2 530 ₽</span>
+                        <span class="price price-retail">5 060 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- SOFT Series -->
+    <section class="section">
+        <div class="section-header soft">
+            <h2 class="section-title soft">SOFT</h2>
+            <span class="section-subtitle">Уход для чувствительной кожи</span>
+        </div>
+
+        <div class="products-grid">
+            <!-- Soft Mini Box Express Care -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/soft-mini-box-express-care.jpg" alt="Soft Mini Box Express Care" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>soft-mini-box-express-care.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Soft Mini Box Express Care</div>
+                        <div class="product-name-ru">Бьютибокс Экспресс Уход для чувствительной кожи</div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">Soft Mini Box</div>
+                            <div class="special-volume">3 Процедуры</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">1 700 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">3 400 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Cleanser -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/soft-cleanser.jpg" alt="Soft Cleanser" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>soft-cleanser.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Soft Cleanser</div>
+                        <div class="product-name-ru">Гель очищающий для чувствительной кожи</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">190 ₽</span>
+                        <span class="price price-retail">400 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">500 ₽</span>
+                        <span class="price price-retail">1 080 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">1 160 ₽</span>
+                        <span class="price price-retail">2 390 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Toner -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/soft-toner.jpg" alt="Soft Toner" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>soft-toner.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Soft Toner</div>
+                        <div class="product-name-ru">Тоник для чувствительной кожи</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">190 ₽</span>
+                        <span class="price price-retail">400 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">600 ₽</span>
+                        <span class="price price-retail">1 340 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">1 350 ₽</span>
+                        <span class="price price-retail">2 760 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Peel -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/soft-peel.jpg" alt="Soft Peel" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>soft-peel.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Soft Peel</div>
+                        <div class="product-name-ru">Пилинг для чувствительной кожи</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">270 ₽</span>
+                        <span class="price price-retail">550 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">1 250 ₽</span>
+                        <span class="price price-retail">2 650 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bioactive Black Mask -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/bioactive-black-mask.jpg" alt="Bioactive Black Mask" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>bioactive-black-mask.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Bioactive Black Mask</div>
+                        <div class="product-name-ru">Сапропелевая биоактивная маска с вулканическим пеплом</div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">1 Саше</div>
+                            <div class="special-volume">25 мл</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">230 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">600 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="special-row">
+                        <div class="special-info">
+                            <div class="special-name">7 Саше</div>
+                            <div class="special-volume">175 мл</div>
+                        </div>
+                        <div class="special-prices">
+                            <div class="special-price-block">
+                                <div class="price-label">Специалист</div>
+                                <div class="price price-pro">1 220 ₽</div>
+                            </div>
+                            <div class="special-price-block">
+                                <div class="price-label">Розница</div>
+                                <div class="price price-retail">3 550 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Cream SPF-30 -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/soft-cream-spf30.jpg" alt="Soft Cream SPF-30" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>soft-cream-spf30.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Soft Cream SPF-30</div>
+                        <div class="product-name-ru">Крем постпроцедурный для чувствительной кожи</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">5 мл</span>
+                        <span class="price price-pro">275 ₽</span>
+                        <span class="price price-retail">550 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">30 мл</span>
+                        <span class="price price-pro">1 200 ₽</span>
+                        <span class="price price-retail">2 390 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">2 880 ₽</span>
+                        <span class="price price-retail">5 790 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                            <!-- SPECIAL Series -->
+    <section class="section">
+        <div class="section-header soft">
+            <h2 class="section-title soft">SPECIAL</h2>
+            <span class="section-subtitle">Специальная серия</span>
+        </div>
+
+        <div class="products-grid">
+            <!-- GALApeel 2-Phasic System -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/galapeel-2phasic-system.jpg" alt="GALApeel 2-Phasic System" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>galapeel-2phasic-system.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name" style="color: #C97B7B;">GALApeel 2-Phasic System</div>
+                        <div class="product-name-ru">Двухфазная сыворотка-пилинг</div>
+                    </div>
+                                                          <div class="price-table-header" style="grid-template-columns: 60px 1fr;">
+                        <span>Объем</span>
+                        <span style="text-align: center;">Специалист</span>
+                    </div>
+                    <div class="price-row" style="grid-template-columns: 60px 1fr;">
+                        <span class="volume">10 мл</span>
+                        <span class="price" style="color: #D32F2F; font-weight: 700; text-align: center;">3 900 ₽</span>
+                    </div>
+                           </div>
+            </div>
+        </div>
+    </section>
+
+                        <!-- REVIVE Series -->
+    <section class="section">
+        <div class="section-header base">
+            <h2 class="section-title base">REVIVE</h2>
+            <span class="section-subtitle">Повседневный профессиональный уход</span>
+        </div>
+
+        <div class="products-grid">
+            <!-- Revive Antiox Cleanser -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/revive-antiox-cleanser.jpg" alt="Revive Antiox Cleanser" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>revive-antiox-cleanser.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Revive Antiox Cleanser</div>
+                        <div class="product-name-ru">Гель для умывания антиоксидантный регенерирующий</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">50 мл</span>
+                        <span class="price price-pro">740 ₽</span>
+                        <span class="price price-retail">1 480 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">1 250 ₽</span>
+                        <span class="price price-retail">2 490 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revive Exfo Toner -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/revive-exfo-toner.jpg" alt="Revive Exfo Toner" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>revive-exfo-toner.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Revive Exfo Toner</div>
+                        <div class="product-name-ru">Тоник эксфолиант ревитализирующий</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">50 мл</span>
+                        <span class="price price-pro">860 ₽</span>
+                        <span class="price price-retail">1 720 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">100 мл</span>
+                        <span class="price price-pro">1 450 ₽</span>
+                        <span class="price price-retail">2 850 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revive Fulvic Cream -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/revive-fulvic-cream.jpg" alt="Revive Fulvic Cream" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>revive-fulvic-cream.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">Revive Fulvic Cream</div>
+                        <div class="product-name-ru">Крем фульвовый восстанавливающий</div>
+                    </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Специалист</span>
+                        <span>Розница</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">50 мл</span>
+                        <span class="price price-pro">1 790 ₽</span>
+                        <span class="price price-retail">3 580 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Nutrient Laboratory Series -->
+    <section class="section">
+        <div class="section-header" style="border-color: #9B59B6;">
+            <h2 class="section-title" style="color: #9B59B6;">NUTRIENT LABORATORY</h2>
+            <span class="section-subtitle">Витамины и стимуляторы усвоения</span>
+        </div>
+
+        <div class="products-grid">
+            <!-- BHP Everyday -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="images/bhp-everyday.jpg" alt="BHP Everyday" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span class="image-placeholder-text">Добавьте изображение<br>bhp-everyday.jpg</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div class="product-name">BHP Everyday</div>
+                        <div class="product-name-ru">Пищевой концентрат сапропелевой фульвовой кислоты</div>
+                    </div>
+                    <div class="price-table-header" style="grid-template-columns: 1fr 1fr;">
+                        <span>Объем</span>
+                        <span style="text-align: center;">Цена</span>
+                    </div>
+                    <div class="price-row" style="grid-template-columns: 1fr 1fr;">
+                        <span class="volume">420 мг</span>
+                        <span class="price" style="color: #9B59B6; font-weight: 700; text-align: center;">3 750 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Action Buttons -->
+    <section class="section" style="margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 600px; margin: 0 auto;">
+            <a href="https://t.me/UtonCosmetics" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; background: var(--color-accent-base); color: white; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; transition: var(--transition); box-shadow: var(--shadow-sm); width: 100%; max-width: 320px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.015-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.099.154.232.17.325.015.093.034.305.019.471z"/>
+                </svg>
+                Связаться с UTON
+            </a>
+            <a href="https://uton.bio/cosmo" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; background: var(--color-card); color: var(--color-text); text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; transition: var(--transition); box-shadow: var(--shadow-sm); border: 2px solid var(--color-border); width: 100%; max-width: 320px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                </svg>
+                Сформировать заказ
+            </a>
+        </div>
+    </section>
+
+    <!-- Info Box -->
+    <section class="section" style="margin-bottom: 60px;">
+        <div style="background: var(--color-card); border-radius: var(--radius); padding: 28px 32px; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto;">
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-base)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 16v-4M12 8h.01"/>
+                </svg>
+                <div style="color: var(--color-text-secondary); font-size: 14px; line-height: 1.8;">
+                    <p style="margin-bottom: 12px;"><strong style="color: var(--color-text);">Заказ можно оформить двумя способами:</strong> через форму оформления заказа или напрямую через менеджера.</p>
+                    <p>Если вы сформировали заказ, но с вами не связались, пожалуйста, напишите менеджеру самостоятельно. Такое случается если ваш номер скрыт или не определяется в месседжере.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-note">
+            Цены указаны в рублях и действительны на 2026 год.<br>
+            Для получения актуальной информации о наличии товара и оптовых скидках<br>
+            обращайтесь к менеджеру.
+        </p>
+        <a href="https://t.me/utoncosmetics" class="contact" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 6.6a2.25 2.25 0 0 0-.106 4.07l3.6 1.5 2.1 6.3a1.125 1.125 0 0 0 2.04.255l2.7-4.2 4.2 2.7a2.25 2.25 0 0 0 3.3-1.8V4.5a2.25 2.25 0 0 0-2.312-2.067z"/>
+            </svg>
+            @utoncosmetics
+        </a>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
