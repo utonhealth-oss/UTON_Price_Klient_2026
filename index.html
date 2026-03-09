@@ -246,38 +246,6 @@
             color: var(--color-price-retail);
         }
 
-        .special-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 0;
-            border-bottom: 1px solid #F5F5F5;
-        }
-
-        .special-row:last-child {
-            border-bottom: none;
-        }
-
-        .special-info {
-            flex: 1;
-        }
-
-        .special-name {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--color-text);
-        }
-
-        .special-volume {
-            font-size: 12px;
-            color: var(--color-text-secondary);
-            margin-top: 2px;
-        }
-
-        .special-price-block {
-            text-align: right;
-        }
-
         .professional-notice {
             background: #FFF5F5;
             border: 1px solid #FECACA;
@@ -340,23 +308,6 @@
             .price-row .price {
                 text-align: center;
             }
-
-            .special-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-
-            .special-price-block {
-                text-align: left;
-                width: 100%;
-            }
-
-            .special-price-block .price {
-                text-align: center;
-                display: block;
-                width: 100%;
-            }
         }
 
         @media (min-width: 1400px) {
@@ -399,32 +350,21 @@
                         <div class="product-name">Beautybox Express Care</div>
                         <div class="product-name-ru">Бьютибокс Экспресс Уход</div>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">Base Mini Box</div>
-                            <div class="special-volume">3 Процедуры</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">3 100 ₽</div>
-                        </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Цена</span>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">Base Box 7</div>
-                            <div class="special-volume">7 Процедур</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">8 740 ₽</div>
-                        </div>
+                    <div class="price-row">
+                        <span class="volume">3 процедуры</span>
+                        <span class="price price-retail">3 100 ₽</span>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">Base Box 14</div>
-                            <div class="special-volume">14 Процедур</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">11 990 ₽</div>
-                        </div>
+                    <div class="price-row">
+                        <span class="volume">7 процедур</span>
+                        <span class="price price-retail">8 740 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">14 процедур</span>
+                        <span class="price price-retail">11 990 ₽</span>
                     </div>
                 </div>
             </div>
@@ -562,23 +502,17 @@
                         <div class="product-name">Active Peptides Mask</div>
                         <div class="product-name-ru">Маска для лица с пептидами и фульвовой кислотой</div>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">1 Саше</div>
-                            <div class="special-volume">25 мл</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">600 ₽</div>
-                        </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Цена</span>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">7 Саше</div>
-                            <div class="special-volume">175 мл</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">3 400 ₽</div>
-                        </div>
+                    <div class="price-row">
+                        <span class="volume">1 саше (25 мл)</span>
+                        <span class="price price-retail">600 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">7 саше (175 мл)</span>
+                        <span class="price price-retail">3 400 ₽</span>
                     </div>
                 </div>
             </div>
@@ -652,14 +586,13 @@
                         <div class="product-name">Soft Mini Box Express Care</div>
                         <div class="product-name-ru">Бьютибокс Экспресс Уход для чувствительной кожи</div>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">Soft Mini Box</div>
-                            <div class="special-volume">3 Процедуры</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">3 400 ₽</div>
-                        </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Цена</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">3 процедуры</span>
+                        <span class="price price-retail">3 400 ₽</span>
                     </div>
                 </div>
             </div>
@@ -789,23 +722,17 @@
                         <div class="product-name">Bioactive Black Mask</div>
                         <div class="product-name-ru">Сапропелевая биоактивная маска с вулканическим пеплом</div>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">1 Саше</div>
-                            <div class="special-volume">25 мл</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">600 ₽</div>
-                        </div>
+                    <div class="price-table-header">
+                        <span>Объем</span>
+                        <span>Цена</span>
                     </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">7 Саше</div>
-                            <div class="special-volume">175 мл</div>
-                        </div>
-                        <div class="special-price-block">
-                            <div class="price price-retail">3 550 ₽</div>
-                        </div>
+                    <div class="price-row">
+                        <span class="volume">1 саше (25 мл)</span>
+                        <span class="price price-retail">600 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="volume">7 саше (175 мл)</span>
+                        <span class="price price-retail">3 550 ₽</span>
                     </div>
                 </div>
             </div>
@@ -1034,7 +961,7 @@
             <p style="font-size: 16px; color: var(--color-text); margin-bottom: 20px; line-height: 1.6;">
                 Вы можете получить поддержку UTON, задав вопрос
             </p>
-            <a href="https://t.me/UtonCosmetics " target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--color-accent-base); color: white; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; transition: var(--transition); box-shadow: var(--shadow-sm);">
+            <a href="https://t.me/UtonCosmetics  " target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--color-accent-base); color: white; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; transition: var(--transition); box-shadow: var(--shadow-sm);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.015-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.099.154.232.17.325.015.093.034.305.019.471z"/>
                 </svg>
