@@ -205,11 +205,14 @@
             letter-spacing: 1px;
             color: var(--color-text-secondary);
             font-weight: 500;
-            text-align: center;
         }
 
         .price-table-header span:first-child {
             text-align: left;
+        }
+
+        .price-table-header span:last-child {
+            text-align: center;
         }
 
         .price-row {
@@ -218,32 +221,25 @@
             gap: 12px;
             padding: 10px 0;
             border-bottom: 1px solid #F5F5F5;
-            text-align: center;
-        }
-
-        .price-row .volume {
-            text-align: left;
         }
 
         .price-row:last-child {
             border-bottom: none;
         }
 
-        .price-row .price {
-            display: block;
-            text-align: center;
-            width: 100%;
-        }
-
-        .volume {
+        .price-row .volume {
             font-size: 14px;
             color: var(--color-text-secondary);
             font-weight: 500;
+            text-align: left;
         }
 
-        .price {
+        .price-row .price {
             font-size: 15px;
             font-weight: 600;
+            display: block;
+            text-align: center;
+            width: 100%;
         }
 
         .price-retail {
@@ -333,8 +329,16 @@
             }
 
             .price-row {
-                grid-template-columns: 50px 1fr;
-                gap: 8px;
+                grid-template-columns: 60px 1fr;
+                gap: 12px;
+            }
+
+            .price-row .volume {
+                text-align: left;
+            }
+
+            .price-row .price {
+                text-align: center;
             }
 
             .special-row {
@@ -345,6 +349,13 @@
 
             .special-price-block {
                 text-align: left;
+                width: 100%;
+            }
+
+            .special-price-block .price {
+                text-align: center;
+                display: block;
+                width: 100%;
             }
         }
 
@@ -1023,7 +1034,7 @@
             <p style="font-size: 16px; color: var(--color-text); margin-bottom: 20px; line-height: 1.6;">
                 Вы можете получить поддержку UTON, задав вопрос
             </p>
-            <a href="https://t.me/UtonCosmetics" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--color-accent-base); color: white; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; transition: var(--transition); box-shadow: var(--shadow-sm);">
+            <a href="https://t.me/UtonCosmetics " target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--color-accent-base); color: white; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; transition: var(--transition); box-shadow: var(--shadow-sm);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.015-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.099.154.232.17.325.015.093.034.305.019.471z"/>
                 </svg>
